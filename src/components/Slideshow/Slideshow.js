@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-
+import './Slideshow.css'
 let store = [
   {
     imageUrl: 'https://www.brainyquote.com/photos_tr/en/t/thomaspaine/386293/thomaspaine1.jpg',
@@ -27,7 +27,7 @@ class Slideshow extends Component {
       <Fragment>
         <div className = 'slideshow-container'>
           {/* Full width images with number and caption */}
-          {store.map( ({ imageUrl, caption }, index) => <div className = 'mySlides fade' key = { index }>
+          {store.map( ({ imageUrl, caption }, index) => <div className = {`mySlides fade ${index === 0? 'show' : ''}`} key = { index }>
             <div className = 'numbertext'> { `${index + 1}/${store.length}` } </div>
             <img src = { imageUrl } alt = { caption } style={{ width:'100%' }} />
             <div className = 'text'> { caption } </div>
@@ -37,7 +37,8 @@ class Slideshow extends Component {
           <button href='www.google.com' className = 'next' onClick = { this.plusSlides(1)}> &#10095; </button>
 
         </div>
-        <div style = {{ textAlign:'center'}}>
+        {/* Dots */}
+        <div className = 'dot-container'>
           {
             store.map((x,i) => 
               <span className = 'dot' onClick = {this.currentSlide(i)} key={i}></span>
