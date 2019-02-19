@@ -78,9 +78,11 @@ class Slideshow extends Component {
         </div>
         {/* Dots */}
         <div className="dot-container">
-          {store.map((x, i) => (
-            <span className="dot" onClick={this.jumpToSlide(i)} key={i} />
-          ))}
+          {
+            store.map(({imageUrl}, i) => (
+            <img className={`dot ${slideIndex  === i + 1 ? "active" : ""} `} src = {imageUrl} onClick={this.jumpToSlide(i)} key={i} alt='thumbnail' />
+          ))
+          }
         </div>
       </Fragment>
     );
