@@ -15,9 +15,9 @@
   color: white;
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 0;
+  height:100%;
   width: auto;
-  margin-top: -22px;
   padding: 16px;
   font-weight: bold;
   font-size: 18px;
@@ -30,7 +30,8 @@
   border-radius: 3px 0 0 3px;
 }
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.5)
+  background-color: rgba(255,255,255,0.5);
+  color: #111;
 }
 .text{
   color: #f2f2f2;
@@ -70,6 +71,10 @@
   -webkit-animation-duration: 1.5s;
   animation-name: fade;
   animation-duration: 1.5s;
+}
+.slideshow-image{
+  width: 100%;
+  height: 80vh;
 }
 @-webkit-keyframes fade{
   from {opacity: .4;}
